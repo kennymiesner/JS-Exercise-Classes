@@ -286,7 +286,7 @@ const rhonda =  new ProjectManager({
   name: 'Rhonda',
   age: 39,
   location: 'Boston, MA',
-  specialty: 'JavaSript',
+  specialty: 'JavaScript',
   favLanguage: 'HTML',
   catchPhrase: 'Alright, alright, alright',
   gradClassName: 'CS1',
