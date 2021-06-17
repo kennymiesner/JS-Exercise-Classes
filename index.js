@@ -214,9 +214,37 @@ console.log(`Task 4:`, ryan.grade(kenny, 'JS'));
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-class Student {
-    
+class Student extends Lambdasian{
+  constructor(attr) {
+    super(attr);
+    this.previousBackground = attr.previousBackground;
+    this.className = attr.className;
+    this.favSubjects = attr.favSubjects;
+  }
+  listSubjects() {
+    return `Loving ${this.favSubjects}!`;
+  }
+  PRAssignment(subject) {
+    return `${this.name} has submitted a PR for ${subject}`;
+  }
+  sprintChallenge(subject) {
+    return `${this.name} has begun sprint challenge on ${subject}`;
+  }
 }
+
+const abby =  new Student({
+  name: 'Abby',
+  age: 28,
+  location: 'Des Moines, IA',
+  previousBackground: 'Program Manager',
+  className: 'LS2106',
+  favSubjects: ['HTML', 'CSS', 'JS'],
+});
+
+console.log(`Task 5:`, abby.listSubjects());
+console.log(`Task 5:`, abby.PRAssignment('HTML'));
+console.log(`Task 5:`, abby.PRAssignment('JS'));
+
 
 /*
   TASK 6
