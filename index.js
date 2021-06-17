@@ -241,6 +241,15 @@ const abby =  new Student({
   favSubjects: ['HTML', 'CSS', 'JS'],
 });
 
+const steve =  new Student({
+  name: 'Steve',
+  age: 62,
+  location: 'Los Angeles, CA',
+  previousBackground: 'Bartender',
+  className: 'LS2106',
+  favSubjects: ['HTML', 'CSS', 'JS'],
+});
+
 console.log(`Task 5:`, abby.listSubjects());
 console.log(`Task 5:`, abby.PRAssignment('HTML'));
 console.log(`Task 5:`, abby.PRAssignment('JS'));
@@ -259,9 +268,35 @@ console.log(`Task 5:`, abby.PRAssignment('JS'));
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
-    
+class ProjectManager extends Instructor {
+  constructor(attr) {
+    super(attr);
+    this.gradClassName = attr.gradClassName;
+    this.favInstructor = attr.favInstructor;
+  }
+  standUp(channel) {
+    return `${this.name} announces to ${channel}, @${channel} standy times!`;
+  }
+  debugsCode(Student, subject) {
+    return `${this.name} debugs ${Student.name}'s code on ${subject}`;
+  }
 }
+
+const rhonda =  new ProjectManager({
+  name: 'Rhonda',
+  age: 39,
+  location: 'Boston, MA',
+  specialty: 'JavaSript',
+  favLanguage: 'HTML',
+  catchPhrase: 'Alright, alright, alright',
+  gradClassName: 'CS1',
+  favInstructor: 'Sean',
+});
+
+console.log(`Task 6:`, rhonda.standUp('LS2106'));
+console.log(`Task 6:`, rhonda.debugsCode(steve, 'HTML'));
+
+
 /*
   STRETCH PROBLEM (no tests!)
     - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
